@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="nl" data-theme="dark">
+<html lang="nl" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asielmigratie & Pluriforme Samenleving - Maatschappijleer</title>
     <meta name="description" content="Een interactieve en leerzame website over asielmigratie en de pluriforme samenleving in Nederland voor het vak Maatschappijleer.">
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Lora (Editorial serif) and Inter (Clean body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <!-- Lucide Icons for premium UI elements -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
@@ -18,10 +18,11 @@
     <header class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <i data-lucide="shield-alert" class="logo-icon"></i>
-                <span class="logo-text">Focus<span>Asiel</span></span>
+                <i data-lucide="book-open" class="logo-icon"></i>
+                <span class="logo-text">Pluriform<span>Asiel</span></span>
             </a>
             <nav class="nav-links">
+                <a href="#connectie" class="nav-link">De Connectie</a>
                 <a href="#begrippen" class="nav-link">Begrippen</a>
                 <a href="#procedure" class="nav-link">Procedure</a>
                 <a href="#cijfers" class="nav-link">Cijfers & Feiten</a>
@@ -42,6 +43,7 @@
 
     <!-- Mobile Nav Overlay -->
     <div class="mobile-nav" id="mobile-nav">
+        <a href="#connectie" class="mobile-nav-link">De Connectie</a>
         <a href="#begrippen" class="mobile-nav-link">Begrippen</a>
         <a href="#procedure" class="mobile-nav-link">Procedure</a>
         <a href="#cijfers" class="mobile-nav-link">Cijfers & Feiten</a>
@@ -54,13 +56,13 @@
         <div class="hero-background"></div>
         <div class="hero-container">
             <div class="hero-content">
-                <div class="tag-badge">Maatschappijleer Project</div>
-                <h1>Pluriforme Samenleving <br><span class="gradient-text">& Asielmigratie</span></h1>
+                <div class="tag-badge">Dossier Maatschappijleer</div>
+                <h1>Asielmigratie & De Pluriforme Samenleving</h1>
                 <p class="hero-description">
-                    Nederland is een pluriforme samenleving waar verschillende culturen en levensstijlen samenkomen. Een van de meest actuele en besproken onderwerpen hierbinnen is **asielmigratie**. Ontdek de kernbegrippen, volg de asielprocedure stap voor stap, bekijk de feitelijke cijfers en test je kennis!
+                    Hoe hangen asiel en onze samenleving samen? In dit dossier leer je hoe asielzoekers in Nederland worden opgevangen en hoe de instroom van nieuwe culturen onze pluriforme samenleving vormt. Ontdek de feiten, volg de procedure en test je kennis!
                 </p>
                 <div class="hero-buttons">
-                    <a href="#begrippen" class="btn btn-primary">Start Verkenning <i data-lucide="arrow-right"></i></a>
+                    <a href="#connectie" class="btn btn-primary">Start Dossier <i data-lucide="arrow-right"></i></a>
                     <a href="#quiz" class="btn btn-secondary">Doe de Quiz <i data-lucide="help-circle"></i></a>
                 </div>
             </div>
@@ -70,16 +72,58 @@
                         <i data-lucide="info" class="text-primary"></i>
                         <span>Wist je dat?</span>
                     </div>
-                    <p class="card-fact">In 2025 bedroeg het aantal eerste asielaanvragen in Nederland 24.073, een aanzienlijke daling ten opzichte van 2024.</p>
+                    <p class="card-fact">In 2025 bedroeg het aantal eerste asielaanvragen in Nederland 24.073, een daling van ruim 25% vergeleken met 2024.</p>
                     <div class="card-footer">
-                        <span class="source-tag">Bron: CBS / IND</span>
+                        <span class="source-tag">Bron: CBS / IND (2025)</span>
                     </div>
                 </div>
-                <!-- Interactive visual box -->
-                <div class="abstract-graphic">
-                    <div class="circle circle-1"></div>
-                    <div class="circle circle-2"></div>
-                    <div class="circle circle-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- De Connectie Section -->
+    <section id="connectie" class="section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="tag-badge">De Samenhang</span>
+                <h2 class="section-title">Hoe asielmigratie onze samenleving vormt</h2>
+                <p class="section-subtitle">Asielmigratie is een van de belangrijkste manieren waarop de pluriforme samenleving in Nederland verandert. Dit proces verloopt in drie stappen:</p>
+            </div>
+
+            <div class="connection-grid">
+                <!-- Step 1 -->
+                <div class="connection-card glass-card connection-card-1">
+                    <div class="connection-icon-wrapper">
+                        <i data-lucide="log-in"></i>
+                    </div>
+                    <h3 class="connection-card-title">1. De Instroom (Migratie)</h3>
+                    <p class="connection-card-text">
+                        Mensen vluchten voor oorlog, geweld of vervolging en vragen asiel aan in Nederland. Dit brengt nieuwe groepen mensen ons land binnen.
+                    </p>
+                    <div class="connection-arrow"><i data-lucide="arrow-right"></i></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="connection-card glass-card connection-card-2">
+                    <div class="connection-icon-wrapper">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="connection-card-title">2. De Ontmoeting (Culturen)</h3>
+                    <p class="connection-card-text">
+                        Er ontstaat contact tussen de bestaande Nederlandse cultuur (de dominante cultuur) en de verschillende subculturen en gewoonten die de nieuwkomers meenemen.
+                    </p>
+                    <div class="connection-arrow"><i data-lucide="arrow-right"></i></div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="connection-card glass-card connection-card-3">
+                    <div class="connection-icon-wrapper">
+                        <i data-lucide="git-merge"></i>
+                    </div>
+                    <h3 class="connection-card-title">3. Het Samenleven (Samenleving)</h3>
+                    <p class="connection-card-text">
+                        De manier waarop we samenleven verandert. Dit kan leiden tot <strong>integratie</strong> (met respect voor elkaar samenleven), <strong>assimilatie</strong> (volledig aanpassen), of <strong>segregatie</strong> (apart van elkaar leven).
+                    </p>
                 </div>
             </div>
         </div>
