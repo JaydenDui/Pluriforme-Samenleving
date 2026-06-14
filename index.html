@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="nl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asielmigratie & Pluriforme Samenleving - Maatschappijleer</title>
+    <meta name="description" content="Een interactieve en leerzame website over asielmigratie en de pluriforme samenleving in Nederland voor het vak Maatschappijleer.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for premium UI elements -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i data-lucide="shield-alert" class="logo-icon"></i>
+                <span class="logo-text">Focus<span>Asiel</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#begrippen" class="nav-link">Begrippen</a>
+                <a href="#procedure" class="nav-link">Procedure</a>
+                <a href="#cijfers" class="nav-link">Cijfers & Feiten</a>
+                <a href="#debat" class="nav-link">Maatschappelijk Debat</a>
+                <a href="#quiz" class="nav-link">Kennis Quiz</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Schakel thema">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Open menu" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#begrippen" class="mobile-nav-link">Begrippen</a>
+        <a href="#procedure" class="mobile-nav-link">Procedure</a>
+        <a href="#cijfers" class="mobile-nav-link">Cijfers & Feiten</a>
+        <a href="#debat" class="mobile-nav-link">Maatschappelijk Debat</a>
+        <a href="#quiz" class="mobile-nav-link">Kennis Quiz</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="tag-badge">Maatschappijleer Project</div>
+                <h1>Pluriforme Samenleving <br><span class="gradient-text">& Asielmigratie</span></h1>
+                <p class="hero-description">
+                    Nederland is een pluriforme samenleving waar verschillende culturen en levensstijlen samenkomen. Een van de meest actuele en besproken onderwerpen hierbinnen is **asielmigratie**. Ontdek de kernbegrippen, volg de asielprocedure stap voor stap, bekijk de feitelijke cijfers en test je kennis!
+                </p>
+                <div class="hero-buttons">
+                    <a href="#begrippen" class="btn btn-primary">Start Verkenning <i data-lucide="arrow-right"></i></a>
+                    <a href="#quiz" class="btn btn-secondary">Doe de Quiz <i data-lucide="help-circle"></i></a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="glass-card hero-card">
+                    <div class="card-header">
+                        <i data-lucide="info" class="text-primary"></i>
+                        <span>Wist je dat?</span>
+                    </div>
+                    <p class="card-fact">In 2025 bedroeg het aantal eerste asielaanvragen in Nederland 24.073, een aanzienlijke daling ten opzichte van 2024.</p>
+                    <div class="card-footer">
+                        <span class="source-tag">Bron: CBS / IND</span>
+                    </div>
+                </div>
+                <!-- Interactive visual box -->
+                <div class="abstract-graphic">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Begrippen Section -->
+    <section id="begrippen" class="section section-begrippen">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">1. Kernbegrippen</h2>
+                <p class="section-subtitle">Begrijp de belangrijkste woorden (begrippen) van de pluriforme samenleving en asielmigratie. Handig voor je toets!</p>
+            </div>
+
+            <!-- Search and filter -->
+            <div class="filter-container">
+                <div class="search-box">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="begrippen-search" placeholder="Zoek een begrip (bijv. integratie, asielzoeker...)...">
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-category="all">Alles</button>
+                    <button class="filter-btn" data-category="samenleving">Samenleving</button>
+                    <button class="filter-btn" data-category="migratie">Migratie & Asiel</button>
+                    <button class="filter-btn" data-category="beleid">Beleid & Integratie</button>
+                </div>
+            </div>
+
+            <!-- Grid of Cards -->
+            <div class="begrippen-grid" id="begrippen-grid">
+                <!-- Concept Cards will be loaded dynamically via JS to allow advanced filtering and interactions, but we'll outline them in JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Procedure Section -->
+    <section id="procedure" class="section section-procedure bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">2. De Asielprocedure in Nederland</h2>
+                <p class="section-subtitle">Wat gebeurt er als iemand asiel aanvraagt in Nederland? Volg de officiële stappen vanaf de grens tot aan de beslissing van de IND.</p>
+            </div>
+
+            <div class="procedure-layout">
+                <!-- Interactive Timeline Navigation -->
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Aanmelding & Registratie</div>
+                    </div>
+                    
+                    <div class="timeline-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Rust- & Voorbereiding</div>
+                    </div>
+                    
+                    <div class="timeline-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-title">De IND Gehoren</div>
+                    </div>
+                    
+                    <div class="timeline-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-title">De Beslissing & Vervolg</div>
+                    </div>
+                </div>
+
+                <!-- Detailed Info Card based on Selected Step -->
+                <div class="procedure-detail-card glass-card" id="procedure-detail-card">
+                    <!-- Dynamic Content Loaded by JS -->
+                    <div class="detail-header">
+                        <div class="detail-step-badge">Stap 1</div>
+                        <h3 class="detail-title" id="proc-title">Laden...</h3>
+                    </div>
+                    <div class="detail-content">
+                        <div class="detail-orgs">
+                            <span class="org-tag" id="proc-org">Betrokken instantie</span>
+                        </div>
+                        <p id="proc-desc" class="detail-text">Beschrijving laadt...</p>
+                        <div class="detail-extra" id="proc-extra">
+                            <!-- Bullet points -->
+                        </div>
+                    </div>
+                    <div class="detail-navigation">
+                        <button class="btn btn-secondary btn-sm" id="proc-prev" disabled><i data-lucide="chevron-left"></i> Vorige</button>
+                        <button class="btn btn-primary btn-sm" id="proc-next">Volgende <i data-lucide="chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Cijfers & Feiten Section -->
+    <section id="cijfers" class="section section-cijfers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">3. Cijfers & Feiten (2024 vs. 2025)</h2>
+                <p class="section-subtitle">In het maatschappelijke debat vliegen de cijfers je vaak om de oren. Wat zijn de werkelijke en meest recente feiten van het CBS en de IND?</p>
+            </div>
+
+            <!-- Stats grid with counters -->
+            <div class="stats-overview-grid">
+                <div class="stat-card glass-card">
+                    <div class="stat-icon-wrapper color-red">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="stat-numbers">
+                        <div class="stat-label">Eerste Asielaanvragen (2025)</div>
+                        <div class="stat-value" id="stat-aanvragen">24.073</div>
+                        <div class="stat-trend trend-down">
+                            <i data-lucide="trending-down"></i> -25.2% t.o.v. 2024 (32.175)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card glass-card">
+                    <div class="stat-icon-wrapper color-green">
+                        <i data-lucide="git-pull-request"></i>
+                    </div>
+                    <div class="stat-numbers">
+                        <div class="stat-label">Nareizigers / Gezinshereniging (2025)</div>
+                        <div class="stat-value" id="stat-nareizigers">16.496</div>
+                        <div class="stat-trend trend-up">
+                            <i data-lucide="trending-up"></i> +38.9% t.o.v. 2024 (11.879)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card glass-card">
+                    <div class="stat-icon-wrapper color-blue">
+                        <i data-lucide="file-check"></i>
+                    </div>
+                    <div class="stat-numbers">
+                        <div class="stat-label">Goedgekeurde aanvragen door IND (2025)</div>
+                        <div class="stat-value" id="stat-inwilliging">47.7%</div>
+                        <div class="stat-trend trend-neutral">
+                            <i data-lucide="minus"></i> 7.420 verleende vergunningen
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Comparison Graph / Grid representation -->
+            <div class="comparison-container glass-card">
+                <h3 class="comparison-title">Ontwikkeling Asielinstroom (2024 vs. 2025)</h3>
+                <div class="chart-wrapper">
+                    <div class="bar-chart">
+                        <!-- Bar group 1 -->
+                        <div class="bar-group">
+                            <div class="bar-group-label">Eerste asielaanvragen</div>
+                            <div class="bars">
+                                <div class="bar bar-2024" style="height: 100%;" data-value="32.175">
+                                    <span class="bar-value">32.175</span>
+                                    <span class="bar-year">2024</span>
+                                </div>
+                                <div class="bar bar-2025" style="height: 74.8%;" data-value="24.073">
+                                    <span class="bar-value">24.073</span>
+                                    <span class="bar-year">2025</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bar group 2 -->
+                        <div class="bar-group">
+                            <div class="bar-group-label">Nareizigers (Gezinshereniging)</div>
+                            <div class="bars">
+                                <div class="bar bar-2024" style="height: 36.9%;" data-value="11.879">
+                                    <span class="bar-value">11.879</span>
+                                    <span class="bar-year">2024</span>
+                                </div>
+                                <div class="bar bar-2025" style="height: 51.3%;" data-value="16.496">
+                                    <span class="bar-value">16.496</span>
+                                    <span class="bar-year">2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="origin-countries-section">
+                    <h4 class="origin-title">Herkomstlanden (Top 3 in 2025)</h4>
+                    <div class="origin-grid">
+                        <div class="origin-item">
+                            <div class="origin-country">1. Syrië (ca. 35%+)</div>
+                            <div class="origin-bar-container">
+                                <div class="origin-bar" style="width: 35%;"></div>
+                            </div>
+                            <span class="origin-desc">Ontvluchten voornamelijk oorlog en politieke instabiliteit.</span>
+                        </div>
+                        <div class="origin-item">
+                            <div class="origin-country">2. Eritrea</div>
+                            <div class="origin-bar-container">
+                                <div class="origin-bar" style="width: 15%;"></div>
+                            </div>
+                            <span class="origin-desc">Ontvluchten vaak de strenge, onbeperkte militaire dienstplicht.</span>
+                        </div>
+                        <div class="origin-item">
+                            <div class="origin-country">3. Jemen</div>
+                            <div class="origin-bar-container">
+                                <div class="origin-bar" style="width: 8%;"></div>
+                            </div>
+                            <span class="origin-desc">Vluchten voor de aanhoudende burgeroorlog en humanitaire crisis.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Maatschappelijk Debat Section -->
+    <section id="debat" class="section section-debat bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">4. Het Maatschappelijk & Politiek Debat</h2>
+                <p class="section-subtitle">Binnen Maatschappijleer leer je om onderwerpen van verschillende kanten (invalshoeken) te bekijken. Hoe denken verschillende groepen in Nederland over asielmigratie?</p>
+            </div>
+
+            <!-- Viewpoint Split Grid -->
+            <div class="debat-grid">
+                <!-- Point of view 1 -->
+                <div class="debat-card glass-card border-left-blue">
+                    <div class="debat-header">
+                        <i data-lucide="heart" class="debat-icon text-blue"></i>
+                        <h3>Humanitaire kant (hulp bieden)</h3>
+                    </div>
+                    <p class="debat-intro">
+                        Deze groep (zoals de partijen GL-PvdA en D66, en hulporganisaties) vindt dat we de plicht hebben om mensen in nood te helpen en te beschermen.
+                    </p>
+                    <ul class="debat-list">
+                        <li>
+                            <i data-lucide="check" class="check-icon"></i>
+                            <span><strong>Mensenrechten centraal:</strong> Nederland heeft internationale afspraken (zoals het Vluchtelingenverdrag van Genève) ondertekend en moet die nakomen.</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" class="check-icon"></i>
+                            <span><strong>Meteen meedoen:</strong> Geef asielzoekers vanaf dag één de kans om Nederlands te leren en te werken. Dit helpt om sneller deel uit te maken van de samenleving.</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" class="check-icon"></i>
+                            <span><strong>Gezin herenigen:</strong> Een vluchteling voelt zich pas echt rustig en fijn als zijn of haar gezin ook veilig is. Samenwonen is belangrijk om hier een nieuw leven op te bouwen.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Point of view 2 -->
+                <div class="debat-card glass-card border-left-orange">
+                    <div class="debat-header">
+                        <i data-lucide="shield" class="debat-icon text-orange"></i>
+                        <h3>Beheersbare kant (controle houden)</h3>
+                    </div>
+                    <p class="debat-intro">
+                        Deze groep (zoals de partijen PVV, VVD en BBB) vindt dat we goed moeten kijken naar wat ons land aankan (de draagkracht) en wil de instroom beperken.
+                    </p>
+                    <ul class="debat-list">
+                        <li>
+                            <i data-lucide="check" class="check-icon"></i>
+                            <span><strong>Druk op voorzieningen:</strong> Te veel nieuwe mensen zorgt voor problemen op de woningmarkt (woningnood), in de zorg, het onderwijs en bij de opvanglocaties.</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" class="check-icon"></i>
+                            <span><strong>Strenge selectie aan de grens:</strong> Mensen uit veilige landen moeten direct worden afgewezen en teruggestuurd. We moeten onze grenzen beter controleren.</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" class="check-icon"></i>
+                            <span><strong>Eigen cultuur beschermen:</strong> Een te grote instroom van mensen uit heel andere culturen kan ervoor zorgen dat Nederlandse gewoonten en de samenhang in de maatschappij veranderen.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dilemma Box -->
+            <div class="dilemma-box glass-card">
+                <div class="dilemma-badge"><i data-lucide="help-circle"></i> Maatschappelijk Dilemma</div>
+                <h3 class="dilemma-title">De kern van het dilemma</h3>
+                <p class="dilemma-text">
+                    Het asieldebat draait in de kern om de botsing tussen twee belangrijke waarden: **menselijke solidariteit** (het beschermen van mensen die op de vlucht zijn voor geweld) versus **maatschappelijke draagkracht** (zorgen dat de eigen samenleving, economie en cultuur stabiel en beheersbaar blijven). Er is geen eenvoudig 'goed' of 'fout' antwoord; het vak Maatschappijleer daagt je uit om hier zelf een beargumenteerde mening over te vormen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Quiz Section -->
+    <section id="quiz" class="section section-quiz">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">5. Test Je Kennis: De Asielquiz</h2>
+                <p class="section-subtitle">Ben je klaar voor je toets? Doe deze interactieve quiz over asielmigratie en de pluriforme samenleving en zie direct hoe goed je de stof beheerst!</p>
+            </div>
+
+            <div class="quiz-container glass-card" id="quiz-wrapper">
+                <!-- Intro State -->
+                <div id="quiz-intro" class="quiz-state active">
+                    <div class="quiz-icon-large">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+                    <h3>Start de Maatschappijleer Kennisquiz</h3>
+                    <p>De quiz bestaat uit 8 meerkeuzevragen over begrippen, cijfers, procedures en debatten. Na elke vraag zie je direct of je antwoord goed is en krijg je een heldere uitleg.</p>
+                    <button class="btn btn-primary btn-lg" id="start-quiz-btn">Start de Quiz <i data-lucide="play"></i></button>
+                </div>
+
+                <!-- Play State (Hidden initially) -->
+                <div id="quiz-play" class="quiz-state hidden">
+                    <div class="quiz-progress-bar-wrapper">
+                        <div class="quiz-progress-text">Vraag <span id="current-question-num">1</span> van <span id="total-questions-num">8</span></div>
+                        <div class="quiz-progress-bar">
+                            <div class="quiz-progress-fill" id="quiz-progress-fill" style="width: 12.5%;"></div>
+                        </div>
+                    </div>
+                    <h3 class="quiz-question" id="quiz-question-text">Vraagstelling laadt...</h3>
+                    <div class="quiz-options" id="quiz-options-container">
+                        <!-- Loaded dynamically -->
+                    </div>
+                    <div class="quiz-feedback hidden" id="quiz-feedback-box">
+                        <div class="feedback-indicator">
+                            <i data-lucide="check-circle" class="feedback-correct-icon hidden"></i>
+                            <i data-lucide="x-circle" class="feedback-incorrect-icon hidden"></i>
+                            <span id="feedback-status-text">Correct!</span>
+                        </div>
+                        <p class="feedback-explanation" id="feedback-explanation-text">Uitleg komt hier.</p>
+                        <button class="btn btn-primary btn-sm" id="next-question-btn">Volgende Vraag <i data-lucide="chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Results State (Hidden initially) -->
+                <div id="quiz-results" class="quiz-state hidden">
+                    <div class="quiz-result-header">
+                        <div class="result-circle">
+                            <span id="score-display">0/8</span>
+                        </div>
+                        <h3 id="result-title">Goed gedaan!</h3>
+                        <p id="result-message">Je bent goed op weg. Hier zijn je resultaten.</p>
+                    </div>
+                    <div class="result-badge-container">
+                        <div class="result-badge" id="result-badge">
+                            <i data-lucide="award"></i>
+                            <span id="badge-text">In de dop</span>
+                        </div>
+                    </div>
+                    <div class="quiz-actions-results">
+                        <button class="btn btn-primary" id="restart-quiz-btn"><i data-lucide="refresh-cw"></i> Probeer Opnieuw</button>
+                        <a href="#begrippen" class="btn btn-secondary"><i data-lucide="book-open"></i> Bestudeer Theorie</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <a href="#" class="logo">
+                    <i data-lucide="shield-alert" class="logo-icon"></i>
+                    <span class="logo-text">Focus<span>Asiel</span></span>
+                </a>
+                <p>Een educatieve website ontwikkeld voor het vak Maatschappijleer. Gemaakt om scholieren te helpen complexe maatschappelijke onderwerpen beter te begrijpen middels feiten, structuren en verschillende perspectieven.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Betrouwbare Bronnen</h4>
+                <ul>
+                    <li><a href="https://www.cbs.nl" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Centraal Bureau voor de Statistiek (CBS)</a></li>
+                    <li><a href="https://www.ind.nl" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Immigratie- en Naturalisatiedienst (IND)</a></li>
+                    <li><a href="https://www.vluchtelingenwerk.nl" target="_blank" rel="noopener"><i data-lucide="external-link"></i> VluchtelingenWerk Nederland</a></li>
+                    <li><a href="https://www.coa.nl" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Centraal Orgaan opvang asielzoekers (COA)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 - Maatschappijleer Project: Pluriforme Samenleving & Asielmigratie.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Script -->
+    <script src="app.js"></script>
+</body>
+</html>
